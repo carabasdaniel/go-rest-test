@@ -10,6 +10,6 @@ ENV GOPATH /go
 # we're using godep to save / restore dependancies
 RUN go get code.google.com/p/gorest
 RUN go get github.com/carabasdaniel/go-rest-test
-RUN go run $GOPATH/src/github.com/carabasdaniel/go-rest-test/main.go
 WORKDIR /go
 EXPOSE 4050
+CMD go run $GOPATH/src/github.com/carabasdaniel/go-rest-test/main.go
