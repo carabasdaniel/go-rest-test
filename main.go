@@ -2,7 +2,7 @@
 package main
 
 import (
-	"code.google.com/p/gorest"	
+        "github.com/fromkeith/gorest"
 	"net/http"		
 )
 
