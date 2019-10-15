@@ -32,4 +32,6 @@ jobs:
         fi
 
     - name: Build
+      env:
+        GOPATH: /home/runner/work
       run: go build -v .
