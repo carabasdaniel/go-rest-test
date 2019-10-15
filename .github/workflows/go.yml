@@ -16,9 +16,15 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
 
+    - name: Create GOPATH dir
+      run: mkdir -p /home/runner/work/src
+
     - name: Get dependencies
       run: |
+        export GOPATH="/home/runner/work/"
+        cp -r /home/runner/work/go-rest-test/go-rest-test /home/runner/work/src/
         mkdir -p /home/runner/go/bin
+        cd /home/runner/work/src/go-rest-test/
         export PATH=/home/runner/go/bin:$PATH
         if [ -f Gopkg.toml ]; then
             curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
